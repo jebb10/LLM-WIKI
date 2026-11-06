@@ -1,0 +1,15 @@
+# Basura de Windows / macOS
+desktop.ini
+*.ini
+Thumbs.db
+.DS_Store
+
+# Estado de sesión local de Obsidian — no aporta al repositorio
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
+
+# Configuración local del agente, específica de cada máquina
+.claude/settings.local.json
+*.local.json
