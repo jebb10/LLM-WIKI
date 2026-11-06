@@ -3,7 +3,7 @@ id_documento: REPORTE-ACTUAL-AGENTES
 tipo_documento: reporte-agentes
 bloque: Bloque 0 - Gobierno
 fecha_creacion: 2026-07-28
-fecha_actualizacion: 2026-10-18
+fecha_actualizacion: 2026-11-05
 estado: Aprobado
 ---
 
@@ -76,46 +76,56 @@ LLM WIKI JB (raíz)
 
 ## 1. `conexiones-vault`
 
-- **Fecha de corrida:** `2026-10-18`
-- **Alcance:** Guía del agente (`000 - LLM WIKI/`, `CLAUDE.md`, `SPEC.md`) y Proyecto activo (`100 - PROYECTO ACTIVO/`).
-- **Resultado:** `0 Críticos · 0 Menores`
+- **Fecha de corrida:** `2026-11-05`
+- **Alcance:** Guía del agente (`000 - LLM WIKI/`, `CLAUDE.md`, `SPEC.md`, `GEMINI.md`) y Proyecto activo (`100 - PROYECTO ACTIVO/`).
+- **Resultado:** `1 Crítico · 0 Menores`
 
 | Espacio | Wikilinks verificados | Enlaces rotos | Rutas absolutas (`file:///`) | Cruces prohibidos de frontera |
 | :--- | :---: | :---: | :---: | :---: |
-| `000 - LLM WIKI/` + Raíz | 48 | 0 | 0 | 0 |
-| `100 - PROYECTO ACTIVO/` | 24 | 0 | 0 | 0 |
+| `000 - LLM WIKI/` + Raíz | 142 | 0 | 0 | 5 (en 3 docs de Bloque 2) |
+| `100 - PROYECTO ACTIVO/` | 46 | 0 | 0 | 0 |
 
-**Observación de cierre:** Se eliminó el archivo duplicado `Bloque 0 - Gobierno/llm-wiki.md`, se reemplazó el wikilink hacia `referencias-externas/llm-wiki` en [[INDICE-DOCUMENTOS-GUIA]] por referencia en código plano (`referencias-externas/llm-wiki.md`), y se normalizaron todos los enlaces de la bitácora de `seguimiento-demo-req-001.md` con wikilinks internos del propio requerimiento.
+**Detalle de Hallazgos:**
+- **[Crítico] Cruces de frontera entre Guía y Proyecto Activo:** Se detectaron wikilinks reales que cruzan desde la Guía del Agente hacia fichas instanciadas de `DEMO-REQ-001`, rompiendo la independencia topológica de ambos espacios:
+  1. `000 - LLM WIKI/Bloque 2 - Ontología y relaciones/plantilla-flujo-funcional.md` (L77, L79): enlaces activos `[[hu-demo-001-reservar-sala]]`, `[[ws-demo-001-consulta-disponibilidad-salas]]`, `[[ws-demo-002-crear-reserva]]`.
+  2. `000 - LLM WIKI/Bloque 2 - Ontología y relaciones/plantilla-historia-de-usuario.md` (L149): enlace activo `[[ws-demo-001-consulta-disponibilidad-salas]]`.
+  3. `000 - LLM WIKI/Bloque 2 - Ontología y relaciones/REGLA-IDENTIFICADOR-WS.md` (L41): enlace activo `[[ws-demo-001-consulta-disponibilidad-salas]]`.
+- **Rutas absolutas:** 0 rutas absolutas operativas encontradas (las menciones detectadas son sintaxis explicativa de reglas en `CLAUDE.md` y `CHECKLIST-ARRANQUE-PROYECTO-NUEVO.md`).
 
 ---
 
 ## 2. `organizador-carpetas`
 
-- **Fecha de corrida:** `2026-10-18`
+- **Fecha de corrida:** `2026-11-05`
 - **Alcance:** Raíz del repositorio, `000 - LLM WIKI/` y `100 - PROYECTO ACTIVO/`.
 - **Resultado:** `0 Críticos · 0 Menores`
 
 | Verificación | Estado | Detalle |
 | :--- | :---: | :--- |
-| Estructura de carpetas de raíz | Cumple | `000 - LLM WIKI/`, `100 - PROYECTO ACTIVO/`, `referencias-externas/`, `.obsidian/`, `.claude/` y artefactos de raíz (`CLAUDE.md`, `GEMINI.md`, `SPEC.md`, `README.md`, `LICENSE`). |
-| Nomenclatura de normas (`MAYUSCULAS-CON-GUIONES.md`) | Cumple | 100 % de normas en Bloques 0, 1 y 2 cumplen (con las excepciones declaradas `00-VISION.md` y `LEEME-*.md`). |
+| Estructura de carpetas de raíz | Cumple | `000 - LLM WIKI/`, `100 - PROYECTO ACTIVO/`, `referencias-externas/`, `.obsidian/`, `.claude/` y artefactos de raíz (`CLAUDE.md`, `GEMINI.md`, `SPEC.md`, `README.md`, `LICENSE`, `.gitignore`). |
+| Nomenclatura de normas (`MAYUSCULAS-CON-GUIONES.md`) | Cumple | 100 % de normas en Bloques 0, 1 y 2 cumplen (con excepciones autorizadas `00-VISION.md` y `LEEME-*.md`). |
 | Nomenclatura de plantillas (`plantilla-*.md`) | Cumple | 8 plantillas normativas en minúsculas con guiones. |
-| Nomenclatura de instancias (`tipo-sigla-nnn-nombre.md`) | Cumple | `ONTOLOGIA.md` §4.3 alineado con `hoja-principal-demo-req-001.md`; las 6 fichas de `DEMO-REQ-001` cumplen. |
+| Nomenclatura de instancias (`tipo-sigla-nnn-nombre.md`) | Cumple | Las 6 fichas de `DEMO-REQ-001` cumplen con prefijo canónico y minúsculas. |
+| Directorio `agentes/` | Cumple | Contiene exactamente los 2 reportes autorizados (`reporte-actual.md` e `historico-auditorias.md`). |
 
 ---
 
 ## 3. `vista-grafica`
 
-- **Fecha de corrida:** `2026-10-18`
-- **Alcance:** Topología de dos componentes conexos separados (`000 - LLM WIKI/` vs `100 - PROYECTO ACTIVO/`) y configuración visual `.obsidian/graph.json`.
-- **Resultado:** `0 Críticos · 0 Menores`
+- **Fecha de corrida:** `2026-11-05`
+- **Alcance:** Topología del grafo de Obsidian, independencia de componentes y patrón estrella (`DEC-09`).
+- **Resultado:** `1 Crítico · 1 Menor`
 
 | Métrica de Grafo | Guía del Agente (`000 - LLM WIKI/`) | Proyecto Activo (`100 - PROYECTO ACTIVO/`) |
 | :--- | :---: | :---: |
-| Páginas huérfanas | 0 | 0 |
-| Cruces entre guía y proyecto | 0 | 0 |
-| Violaciones al patrón estrella (DEC-09) | No aplica | 0 (cruces HU↔Flujo↔WS en texto plano; excepción de `seguimiento-demo-req-001` aplicada) |
-| Grupos de color (`.obsidian/graph.json`) | Configurados (3 grupos semánticos) | Configurados |
+| Páginas huérfanas | 1 (`GEMINI.md`) | 0 |
+| Cruces entre guía y proyecto | 5 enlaces salientes (violación topológica) | 0 enlaces salientes hacia guía |
+| Violaciones al patrón estrella (DEC-09) | No aplica | 0 (cumple patrón estrella centralizado en `hoja-principal-demo-req-001.md`; bitácora de seguimiento con excepción documentada) |
+| Grupos de color (`.obsidian/graph.json`) | Configurados y vigentes | Configurados y vigentes |
+
+**Detalle de Hallazgos:**
+- **[Crítico] Conexión indebida entre componentes:** Coincidente con `conexiones-vault`, los ejemplos ilustrativos con wikilinks activos en `Bloque 2` fusionan artificialmente los grafos de la Guía y de `DEMO-REQ-001`.
+- **[Menor] Nodo huérfano en raíz (`GEMINI.md`):** Al ser un puente de compatibilidad multi-agente reciente que cita `CLAUDE.md` en texto plano, no posee enlaces entrantes ni salientes registrados en el grafo Obsidian.
 
 ---
 
