@@ -4,7 +4,7 @@ tipo_documento: bitacora
 bloque: Bloque 0 - Gobierno
 principios_aplicados: [P1, P4, P5, P10, P11]
 fecha_creacion: 2026-07-01
-fecha_actualizacion: 2026-10-18
+fecha_actualizacion: 2026-11-05
 estado: Aprobado
 ---
 
@@ -38,4 +38,5 @@ Varias plantillas y documentos normativos citan decisiones con IDs de la forma `
 | `DEC-08` | `2026-07-28` | Se agrega `README.md` en la raíz como portada para lectores humanos, separado de `CLAUDE.md`, que sigue siendo la única fuente de verdad operativa del agente. Motivo: un visitante del repositorio no debería leer reglas operativas del agente para entender qué es el proyecto. | P11 |
 | `DEC-09` | `2026-07-29` | Regla dura aclarada: dentro de un requerimiento, los cruces HU↔Flujo↔WS se referencian en texto plano con el ID (nunca wikilink) — solo la hoja principal recibe wikilinks reales desde ellos. Única excepción: el documento de Seguimiento sí usa wikilinks reales hacia HU/WS/Flujo en su tabla de trazabilidad y en la columna "Documentos afectados" de su bitácora, por mandato de `plantilla-seguimiento-requerimiento.md` — sin esos enlaces no funcionan la propagación de cambios ni la auditoría de rol. Motivo: `vista-grafica` encontró la violación en `DEMO-REQ-001`, el ejemplo público del patrón. | P1, CP-16 |
 | `DEC-10` | `2026-10-18` | Unificación del límite de Reglas de Negocio y Criterios de Aceptación en `plantilla-historia-de-usuario.md` a **máximo 15** (alineado con la regla 28 de `CLAUDE.md`), creación de `GEMINI.md` en la raíz como puente ligero de compatibilidad multi-agente (Claude Code + Antigravity/Gemini CLI) sin duplicar contenido normativo (P4, P11), y remediación integral de los hallazgos de los 5 subagentes de auditoría sobre `DEMO-REQ-001` y plantillas de Bloques 1 y 2. | P4, P5, P11 |
+| `DEC-11` | `2026-11-05` | Normalización de referencias ilustrativas a fichas de `DEMO-REQ-001` en `Bloque 2` (`plantilla-flujo-funcional`, `plantilla-historia-de-usuario`, `REGLA-IDENTIFICADOR-WS`) a texto plano en código sin corchetes de wikilink para eliminar cruces de frontera Guía → Proyecto Activo; incorporación de `GEMINI.md` al grafo de la Guía mediante enlace bidireccional con `[[CLAUDE]]` e `[[INDICE-DOCUMENTOS-GUIA]]`; y actualización de los reportes canónicos de auditoría estructural a cero defectos (0 Críticos, 0 Menores). | P1, P2, P4, P8, P11 |
 

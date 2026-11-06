@@ -8,7 +8,7 @@
 | :----------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 | [[CLAUDE]]                                                               | Fuente de verdad vigente — operación diaria del agente                                              |
 | [[SPEC]]                                                                 | Material fundacional/histórico — no se edita en paralelo a `CLAUDE.md`                              |
-| `GEMINI.md`                                                              | Puente ligero de compatibilidad multi-agente (redirige a `CLAUDE.md`) — fuera del grafo             |
+| [[GEMINI]]                                                              | Puente ligero de compatibilidad multi-agente (redirige a [[CLAUDE]])                               |
 | `README.md`                                                              | Portada del repositorio, para lectores humanos — no es documento normativo                          |
 | `referencias-externas/llm-wiki.md`                                       | Material fundacional externo, de terceros — el patrón "LLM Wiki" en el que se inspira este proyecto |
 

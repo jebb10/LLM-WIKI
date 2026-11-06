@@ -78,19 +78,14 @@ LLM WIKI JB (raíz)
 
 - **Fecha de corrida:** `2026-11-05`
 - **Alcance:** Guía del agente (`000 - LLM WIKI/`, `CLAUDE.md`, `SPEC.md`, `GEMINI.md`) y Proyecto activo (`100 - PROYECTO ACTIVO/`).
-- **Resultado:** `1 Crítico · 0 Menores`
+- **Resultado:** `0 Críticos · 0 Menores`
 
 | Espacio | Wikilinks verificados | Enlaces rotos | Rutas absolutas (`file:///`) | Cruces prohibidos de frontera |
 | :--- | :---: | :---: | :---: | :---: |
-| `000 - LLM WIKI/` + Raíz | 142 | 0 | 0 | 5 (en 3 docs de Bloque 2) |
+| `000 - LLM WIKI/` + Raíz | 145 | 0 | 0 | 0 |
 | `100 - PROYECTO ACTIVO/` | 46 | 0 | 0 | 0 |
 
-**Detalle de Hallazgos:**
-- **[Crítico] Cruces de frontera entre Guía y Proyecto Activo:** Se detectaron wikilinks reales que cruzan desde la Guía del Agente hacia fichas instanciadas de `DEMO-REQ-001`, rompiendo la independencia topológica de ambos espacios:
-  1. `000 - LLM WIKI/Bloque 2 - Ontología y relaciones/plantilla-flujo-funcional.md` (L77, L79): enlaces activos `[[hu-demo-001-reservar-sala]]`, `[[ws-demo-001-consulta-disponibilidad-salas]]`, `[[ws-demo-002-crear-reserva]]`.
-  2. `000 - LLM WIKI/Bloque 2 - Ontología y relaciones/plantilla-historia-de-usuario.md` (L149): enlace activo `[[ws-demo-001-consulta-disponibilidad-salas]]`.
-  3. `000 - LLM WIKI/Bloque 2 - Ontología y relaciones/REGLA-IDENTIFICADOR-WS.md` (L41): enlace activo `[[ws-demo-001-consulta-disponibilidad-salas]]`.
-- **Rutas absolutas:** 0 rutas absolutas operativas encontradas (las menciones detectadas son sintaxis explicativa de reglas en `CLAUDE.md` y `CHECKLIST-ARRANQUE-PROYECTO-NUEVO.md`).
+**Observación de cierre:** Sin hallazgos en la corrida del `2026-11-05`. Se aplicó `DEC-11`: se normalizaron a texto plano en código las referencias ilustrativas de `Bloque 2` hacia fichas de `DEMO-REQ-001` (`plantilla-flujo-funcional.md`, `plantilla-historia-de-usuario.md`, `REGLA-IDENTIFICADOR-WS.md`), erradicando los cruces de frontera entre Guía y Proyecto Activo.
 
 ---
 
@@ -114,18 +109,16 @@ LLM WIKI JB (raíz)
 
 - **Fecha de corrida:** `2026-11-05`
 - **Alcance:** Topología del grafo de Obsidian, independencia de componentes y patrón estrella (`DEC-09`).
-- **Resultado:** `1 Crítico · 1 Menor`
+- **Resultado:** `0 Críticos · 0 Menores`
 
 | Métrica de Grafo | Guía del Agente (`000 - LLM WIKI/`) | Proyecto Activo (`100 - PROYECTO ACTIVO/`) |
 | :--- | :---: | :---: |
-| Páginas huérfanas | 1 (`GEMINI.md`) | 0 |
-| Cruces entre guía y proyecto | 5 enlaces salientes (violación topológica) | 0 enlaces salientes hacia guía |
+| Páginas huérfanas | 0 (incorporado `GEMINI.md` vía `DEC-11`) | 0 |
+| Cruces entre guía y proyecto | 0 | 0 |
 | Violaciones al patrón estrella (DEC-09) | No aplica | 0 (cumple patrón estrella centralizado en `hoja-principal-demo-req-001.md`; bitácora de seguimiento con excepción documentada) |
 | Grupos de color (`.obsidian/graph.json`) | Configurados y vigentes | Configurados y vigentes |
 
-**Detalle de Hallazgos:**
-- **[Crítico] Conexión indebida entre componentes:** Coincidente con `conexiones-vault`, los ejemplos ilustrativos con wikilinks activos en `Bloque 2` fusionan artificialmente los grafos de la Guía y de `DEMO-REQ-001`.
-- **[Menor] Nodo huérfano en raíz (`GEMINI.md`):** Al ser un puente de compatibilidad multi-agente reciente que cita `CLAUDE.md` en texto plano, no posee enlaces entrantes ni salientes registrados en el grafo Obsidian.
+**Observación de cierre:** Sin hallazgos en la corrida del `2026-11-05`. Grafo 100 % saludable en dos componentes conexos independientes y cero páginas huérfanas tras aplicar `DEC-11`.
 
 ---
 

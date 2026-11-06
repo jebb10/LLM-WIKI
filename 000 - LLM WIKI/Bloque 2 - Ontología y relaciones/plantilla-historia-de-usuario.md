@@ -146,7 +146,7 @@ Requerimiento padre: `DEMO-REQ-001` · Paso: `P-02` · Actor: Empleado registrad
 - **RN-01:** No se admite una reserva con menos de dos horas de anticipación.
 - **CA-01 (happy path):** Dado que la sala está libre en el horario elegido, cuando confirmo la reserva, entonces el sistema la registra y notifica al solicitante.
 - **CA-02 (unhappy path):** Dado que la sala ya está reservada en ese horario, cuando intento confirmar, entonces el sistema rechaza la reserva y muestra el conflicto.
-- **WS asociado:** `[[ws-demo-001-consulta-disponibilidad-salas]]` — consulta de franjas libres por sala.
+- **WS asociado:** `ws-demo-001-consulta-disponibilidad-salas` — consulta de franjas libres por sala.
 
 ---
 

@@ -74,9 +74,9 @@ flowchart TD
 
 | Paso | Descripción | Actor | HU asociada | WS invocado |
 | :---: | :--- | :--- | :--- | :--- |
-| `P-01` | Consulta franjas libres por sala y fecha | Empleado registrado | `[[hu-demo-001-reservar-sala]]` | `[[ws-demo-001-consulta-disponibilidad-salas]]` |
+| `P-01` | Consulta franjas libres por sala y fecha | Empleado registrado | `hu-demo-001-reservar-sala` | `ws-demo-001-consulta-disponibilidad-salas` |
 | `P-02` | Punto de decisión — disponibilidad | Sistema | — | — |
-| `P-03` | Confirma la reserva | Empleado registrado | `[[hu-demo-001-reservar-sala]]` | `[[ws-demo-002-crear-reserva]]` |
+| `P-03` | Confirma la reserva | Empleado registrado | `hu-demo-001-reservar-sala` | `ws-demo-002-crear-reserva` |
 
 ---
 

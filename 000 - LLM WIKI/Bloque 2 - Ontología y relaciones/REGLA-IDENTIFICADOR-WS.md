@@ -38,7 +38,7 @@ Si las Historias de Usuario o Pasos de Flujo referencian un servicio por su URL 
    - El ID Canónico es **inmutable**: no cambia aunque el proveedor, la URL, la tecnología o la versión cambien.
 2. **Prohibición de URLs Hardcodeadas:**
    - Queda estrictamente **prohibido incluir URLs (`http://...` / `https://...`)** en el cuerpo de las Historias de Usuario, Pasos de Flujo o Reglas de Negocio.
-   - Las Historias de Usuario y Pasos de Flujo **únicamente referencian el ID Canónico** (ej. `[[ws-demo-001-consulta-disponibilidad-salas]]`).
+   - Las Historias de Usuario y Pasos de Flujo **únicamente referencian el ID Canónico** (ej. `ws-demo-001-consulta-disponibilidad-salas`).
 3. **Resiliencia Técnicas:**
    - Ante cualquier cambio de URL, puerto, método HTTP o proveedor, **únicamente se actualiza la ficha individual del Web Service** (`ws-[sigla]-[nnn]-[nombre].md`).
    - Ninguna Historia de Usuario ni Paso de Flujo sufre modificaciones.
